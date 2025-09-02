@@ -1,0 +1,36 @@
+// Dimensões e espaçamentos reutilizáveis
+$line-color: #e9ecef;
+$icon-size: 52px;        // diâmetro do ícone central
+$icon-ring: 6px;         // anel branco ao redor
+$gap-to-icon: 40px;      // “folga” entre card e ícone
+$date-offset: 92px;      // distância da data até a linha, do lado oposto
+$card-width: 520px;
+
+// Z-index
+$z-icon: 10;
+$z-card: 5;
+
+// Mixins para left/right
+@mixin side-left {
+  // card à esquerda ⇒ data do lado direito
+  .custom-element .vertical-timeline-element-content { margin-right: calc($gap-to-icon + $icon-size/2) !important; }
+  .tl-date { right: -$date-offset !important; left: auto !important; }
+  .custom-element .vertical-timeline-element-content::after {
+    right: -16px; border: 10px solid transparent; border-left-color: rgba(255,255,255,.28);
+  }
+  .custom-element .vertical-timeline-element-content::before {
+    right: -15px; border: 10px solid transparent; border-left-color: inherit; z-index: 2;
+  }
+}
+
+@mixin side-right {
+  // card à direita ⇒ data do lado esquerdo
+  .custom-element .vertical-timeline-element-content { margin-left: calc($gap-to-icon + $icon-size/2) !important; }
+  .tl-date { left: -$date-offset !important; right: auto !important; }
+  .custom-element .vertical-timeline-element-content::after {
+    left: -16px; border: 10px solid transparent; border-right-color: rgba(255,255,255,.28);
+  }
+  .custom-element .vertical-timeline-element-content::before {
+    left: -15px; border: 10px solid transparent; border-right-color: inherit; z-index: 2;
+  }
+}
