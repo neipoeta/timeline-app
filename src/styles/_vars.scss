@@ -1,14 +1,14 @@
-// Dimensões e espaçamentos reutilizáveis
 $line-color: #e9ecef;
-$icon-size: 52px;        // diâmetro do ícone central
-$icon-ring: 6px;         // anel branco ao redor
-$gap-to-icon: 40px;      // “folga” entre card e ícone
-$date-offset: 92px;      // distância da data até a linha, do lado oposto
+$icon-size: 52px;
+$icon-ring: 6px;
+$gap-from-line: 110px; // ↑ espaço pro card não encostar na linha/ícone
+$date-offset: 120px;
 $card-width: 520px;
 
-// Z-index
 $z-icon: 10;
 $z-card: 5;
+
+$icon-shadow: 0 0 0 $icon-ring #fff, 0 4px 18px rgba(0,0,0,.08);
 
 // Mixins para left/right
 @mixin side-left {

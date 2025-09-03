@@ -4,9 +4,11 @@ import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
 import "./styles/timeline.scss";
-import fallbackData from "./config/data.json";
-import TimelineCard from "./components/TimelineCard";
 import normalizeTimeline from "./services/normalizeTimeline";
+import TimelineCard from "./components/TimelineCard";
+
+// se deixar seu fallback em src/config/data.json, troque o caminho
+import fallbackData from "./config/data.json";
 
 export default function App() {
   const [timeline, setTimeline] = useState([]);
@@ -27,13 +29,14 @@ export default function App() {
           timeout: 15000,
           cancelToken: source.token,
         });
-        if (mounted) { setTimeline(normalizeTimeline(resp.data || [])); setLoading(false); }
+        if (mounted) setTimeline(normalizeTimeline(resp.data || []));
       } catch {
-        try {
-          if (mounted) { setTimeline(normalizeTimeline(fallbackData || [])); setErrorMsg("Erro ao buscar API — mostrando dados locais (fallback)."); }
-        } finally {
-          if (mounted) setLoading(false);
+        if (mounted) {
+          setTimeline(normalizeTimeline(fallbackData || []));
+          setErrorMsg("Erro ao buscar API — mostrando dados locais (fallback).");
         }
+      } finally {
+        if (mounted) setLoading(false);
       }
     })();
 
@@ -41,8 +44,7 @@ export default function App() {
   }, [entidade]);
 
   const clientName =
-    (timeline?.[0]?.nm_fantasia || timeline?.[0]?.raw?.nm_fantasia) ||
-    `cd_entidade ${entidade}`;
+    timeline?.[0]?.nm_fantasia || timeline?.[0]?.raw?.nm_fantasia || `cd_entidade ${entidade}`;
 
   return (
     <div className="app-root">
@@ -53,16 +55,13 @@ export default function App() {
       {loading && <p className="center">Carregando timeline...</p>}
       {errorMsg && <p className="center error">{errorMsg}</p>}
 
+      {/* props oficiais: layout / lineColor */}
       <VerticalTimeline layout="2-columns" lineColor="#e9ecef">
         {timeline.map((item, idx) => (
           <TimelineCard
-            key={
-              item.tipo === "OS"
-                ? `OS-${item.cd_ordem_servico ?? idx}`
-                : `PD-${item.cd_pedido ?? idx}`
-            }
+            key={item.tipo === "OS" ? `OS-${item.cd_ordem_servico ?? idx}` : `PD-${item.cd_pedido ?? idx}`}
             item={item}
-            position={idx % 2 === 0 ? "left" : "right"}
+            position={idx % 2 === 0 ? "left" : "right"}   // alterna L/R
           />
         ))}
       </VerticalTimeline>

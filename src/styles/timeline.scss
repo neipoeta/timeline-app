@@ -44,9 +44,10 @@ $tail-offset: 18px;   // comprimento da “boca” do balão
 }
 
 /* ===== Card ===== */
+/* ↓ Reduzi a largura do card (de ~520px para 460px) */
 .custom-element .vertical-timeline-element-content {
-  width: 520px;
-  padding: 18px 18px 20px;
+  width: 460px;
+  padding: 16px 16px 18px;
   border-radius: 12px;
   color: #fff;
   position: relative;
@@ -117,18 +118,57 @@ $tail-offset: 18px;   // comprimento da “boca” do balão
 .kv-line { font-size: 14px; }
 .kv-label { font-weight: 700; }
 
+/* ↑↑ AUMENTEI o tamanho dos badges */
 .badges-wrapper {
   position: absolute;
   top: 8px; right: 10px;
-  display:flex; gap:6px;
+  display:flex; gap:8px;
 }
 .badge {
-  width:28px; height:28px;
+  width: 36px;           /* era 28px */
+  height: 36px;          /* era 28px */
   display:flex; align-items:center; justify-content:center;
-  border-radius:8px;
+  border-radius: 10px;   /* um pouco mais “pill” */
   background: rgba(255,255,255,.18);
-  color:#fff; font-size:14px;
+  color:#fff;
+  font-size: 16px;       /* ajuda a aumentar os <svg> sem size explícito */
   box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+.badge .badge-img {
+  width: 25px;
+  height: 25px;
+  display:block;
+}
+
+/* ===== TAGS (acima do título quando for PEDIDO) ===== */
+/* ↑ dei uma leve aumentada nas tags */
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;              /* era 6px */
+  margin-bottom: 10px;   /* era 8px */
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;     /* era 4px 10px */
+  border-radius: 999px;
+  font-size: 13.5px;     /* era 12px */
+  font-weight: 800;      /* um pouco mais forte */
+  line-height: 1;
+  white-space: nowrap;
+
+  &.light {
+    background: rgba(255,255,255,.22);
+    border: 1px solid rgba(255,255,255,.35);
+    color: #fff;
+  }
+
+  &.outline {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.5);
+    color: #fff;
+  }
 }
 
 /* ===== Responsivo ===== */
@@ -143,4 +183,8 @@ $tail-offset: 18px;   // comprimento da “boca” do balão
     left:auto !important; right:auto !important;
     display:block; text-align:center;
   }
+}
+
+.vertical-timeline-element-icon shadow-size-small bounce-in {
+    display: flex;
 }
