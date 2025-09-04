@@ -1,0 +1,27 @@
+$page-color: #00385c;
+
+.page-title {
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 22px;
+  color: $page-color;
+}
+
+.brand-logo {
+  justify-self: start;
+  width: 14rem;
+  height: 6rem;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.client-name {
+  text-align: center;
+  font-weight: 700;
+  color: $page-color;
+}

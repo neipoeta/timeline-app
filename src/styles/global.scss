@@ -1,0 +1,61 @@
+/* ===== Variáveis ===== */
+$timeline-color: var(--accentColor, #00385c);
+
+/* === App background === */
+$app-bg: #ffffff;               /* fundo agora é branco */
+html, body, #root { background: $app-bg !important; }
+
+.app-root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.vertical-timeline-element-content-arrow {
+  content: '';
+  border-right: 10px solid $timeline-color;
+  border-left: 10px solid $timeline-color;
+}
+
+.timeline-shell {
+  position: relative;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+ /* ===== Responsivo ===== */
+ @media (max-width: 1170px){
+   .custom-element .vertical-timeline-element-content{ width: calc(100% - 56px); }
+   .vertical-timeline::before{ left:10px; width:4px; transform:none; }
+   .vertical-timeline-element-icon{ left:10px !important; }
+   .date-opposite{
+     position:relative !important;
+     top:-8px !important;
+     transform:none !important;
+     left:auto !important; right:auto !important;
+     display:block; text-align:center;
+     color: $timeline-color !important; /* mantém coerência no mobile */
+   }
+    .vertical-timeline--two-columns .vertical-timeline-element-content{ margin-right: 0 !important; }
+    .vertical-timeline--two-columns .vertical-timeline-element-content{ margin-right: 0 !important; }
+
+    /* ==== Vertical Timeline: força 2 colunas sempre ==== */
+
+    /* linha/ícone sempre no centro */
+    .vertical-timeline--two-columns::before { left: 50% !important; transform: translateX(-50%) !important; }
+    .vertical-timeline--two-columns .vertical-timeline-element-icon {
+      left: 50% !important; transform: translateX(-50%) !important;
+    }
+
+    /* largura dos cards como no desktop da lib */
+    .vertical-timeline--two-columns .vertical-timeline-element-content { 
+      width: 41% !important; 
+    }
+
+    /* espelhamento L/R e afastamentos da linha */
+    .vertical-timeline-element--left  .vertical-timeline-element-content  { float: left  !important; margin-right: 4rem !important; }
+    .vertical-timeline-element--right .vertical-timeline-element-content  { float: right !important; margin-left:  4.5rem !important; }
+
+    /* evita a lib aplicar o modo "single column" em telas menores */
+    .vertical-timeline--two-columns .vertical-timeline-element { width: 100% !important; }
+ }
+   
+

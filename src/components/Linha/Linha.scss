@@ -1,0 +1,25 @@
+.line-gradient {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 49.6% !important;
+  transform: translateX(-50%);
+  width: 4px;
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: 0; // abaixo dos ícones
+}
+
+.timeline-shell { position: relative; }
+
+// Ícone com cor do card
+.vertical-timeline-element-icon {
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 50% !important;
+    background-clip: padding-box !important;
+    box-shadow: 0 0 0 3px var(--accentColor), 0 4px 18px rgba(0,0,0,.08) !important;
+    display:flex; align-items:center; justify-content:center;
+    z-index: 10 !important;
+    pointer-events: none;
+}
+

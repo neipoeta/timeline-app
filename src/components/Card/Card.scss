@@ -1,0 +1,66 @@
+$shadow-soft: 0 14px 28px rgba(0,0,0,.05), 0 6px 12px rgba(0,0,0,.04);
+/* alinha arrow no topo do card */
+.vertical-timeline-element-content-arrow {
+  top: 18px !important;
+  transform: none !important;
+}
+
+/* data (no lado oposto) usa a cor do card */
+.date-opposite {
+  position: absolute !important;
+  top: 18% !important;
+  transform: translateY(-60%) !important;
+  white-space: nowrap !important;
+  color: var(--accentColor) !important;
+  font-weight: 900 !important;
+  font-size: 16px !important;
+  letter-spacing: .2px;
+  pointer-events: none;
+}
+
+.card-header { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.tags-row   { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px; }  
+
+/* ===== Card ===== */
+.custom-element .vertical-timeline-element-content{
+  width: 380px;
+  padding: 16px 16px 18px;
+  border-radius: 12px;
+  color: #fff;
+  position: relative;
+  box-shadow: 0 14px 28px rgba(0,0,0,.05), 0 6px 12px rgba(0,0,0,.04);
+  border: none;
+  z-index: 5;
+}
+
+/* ===== Elemento base ===== */
+.vertical-timeline-element { margin: 28px 0 !important; position: relative; z-index: 1; }
+.vertical-timeline--two-columns .vertical-timeline-element-content {margin-right: .4rem; margin-left: -.1rem;} 
+/* ===== Data no lado OPOSTO ao card ===== */
+.vertical-timeline-element-date{ background: transparent !important; width: auto !important; padding: 0 !important; }
+
+
+
+
+//  /* ===== Responsivo ===== */
+//  @media (max-width: 1170px){
+//   /* Card.scss */
+
+//   /* alinha arrow no topo */
+//   .tl-card .vertical-timeline-element-content-arrow {
+//     top: 18px !important;
+//     transform: none !important;
+//   }
+
+//   /* conteúdo do card: precisa ser relative para ancorar os Marcadores absolutos */
+//   .tl-card .vertical-timeline-element-content{
+//     width: 380px;
+//     padding: 16px 16px 18px;
+//     border-radius: 12px;
+//     color: #fff;
+//     position: relative;                 /* <- essencial */
+//     box-shadow: 0 14px 28px rgba(0,0,0,.05), 0 6px 12px rgba(0,0,0,.04);
+//     border: none;
+//     z-index: 5;
+//   }
+//  }
