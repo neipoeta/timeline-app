@@ -1,7 +1,7 @@
 import React from "react";
 import medalha from "../../images/ico-16x16-medalha-ouro.png";
 import trofeu from "../../images/ico-16x16-trophy.png";
-import "./Marcadores.scss";
+import "./TimelineMarcadores.scss";
 
 // ícones SVG simples (sem libs)
 const UpIcon = ({ size = 16 }) => (

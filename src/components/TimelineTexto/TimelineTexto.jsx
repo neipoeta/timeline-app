@@ -1,6 +1,6 @@
 import React from "react";
-import "./Texto.scss";
+import "./TimelineTexto.scss";
 
-export default function Texto({ html }) {
+export default function TimelineTexto({ html }) {
   return <div className="kv" dangerouslySetInnerHTML={{ __html: html }} />;
 }

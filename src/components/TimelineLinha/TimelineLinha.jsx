@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Linha.scss";
+import "./TimelineLinha.scss";
 
 /**
  * Envolve a VerticalTimeline e desenha uma linha central com gradiente
  * segmentado, usando as posições dos ícones + cores recebidas.
  */
-export default function Linha({ colors = [], children }) {
+export default function TimelineLinha({ colors = [], children }) {
   const shellRef = useRef(null);
   const [bg, setBg] = useState("");
 

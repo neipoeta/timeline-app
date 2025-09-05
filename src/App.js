@@ -3,11 +3,11 @@ import axios from "axios";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-import Cliente from "./components/Cliente/Cliente";
-import Linha from "./components/Linha/Linha";
-import Card from "./components/Card/Card";
+import Cliente from "./components/TimelineCliente/TimelineCliente";
+import Linha from "./components/TimelineLinha/TimelineLinha";
+import Card from "./components/TimelineCard/TimelineCard";
 
-import "./styles/global.scss";
+import "./styles/TimelineGlobal.scss";
 
 // dados/imagens
 import fallbackData from "./config/data.json";

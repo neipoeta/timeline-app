@@ -1,12 +1,12 @@
 import React from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
-import Titulo from "../Titulo/Titulo";
-import Texto from "../Texto/Texto";
-import Tag from "../Tag/Tag";
-import Marcador from "../Marcadores/Marcadores"; // <- componente de UM marcador
-import "./Card.scss";
+import Titulo from "../TimelineTitulo/TimelineTitulo";
+import Texto from "../TimelineTexto/TimelineTexto";
+import Tag from "../TimelineTag/TimelineTag";
+import Marcador from "../TimelineMarcadores/TimelineMarcadores"; // <- componente de UM marcador
+import "./TimelineCard.scss";
 
-export default function Card({ item, position = "left" }) {
+export default function TimelineCard({ item, position = "left" }) {
   const tags = item?.tags || [];
 
   const contentStyle = {

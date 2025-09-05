@@ -1,5 +1,5 @@
 import React from "react";
-import "./Cliente.scss";
+import "./TimelineCliente.scss";
 
 export default function Cliente({ logo, titulo }) {
   return (
